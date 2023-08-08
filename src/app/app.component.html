@@ -1,0 +1,36 @@
+<!-- LAYOUT -->
+<mat-sidenav-container class="example-container">
+  <!-- MENU -->
+  <mat-sidenav #sidenav [mode]="'side'"> 
+    <br/>   
+    <p>
+      <a>Usuarios</a><br/>
+      <a>Produtos</a>
+    </p>
+  </mat-sidenav>
+  <!-- MENU -->
+
+  <mat-sidenav-content>
+    <p style="position: absolute;"><button mat-button (click)="sidenav.toggle()">Menu</button></p>
+    <p>
+      <mat-toolbar>
+        <span>My Application</span>
+      </mat-toolbar>
+    </p>
+    <!-- BODY -->
+    <div class="body">
+      corpo do sistema
+    </div>    
+    <!-- BODY -->
+
+    <!-- FOOTER -->
+    <div class="footer">
+      @Copyright
+    </div>
+    <!-- FOOTER -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!-- LAYOUT -->
+
+
+

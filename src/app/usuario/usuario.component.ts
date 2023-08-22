@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { reduce } from 'rxjs';
 
 @Component({
   selector: 'app-usuario',
@@ -27,14 +28,15 @@ export class UsuarioComponent {
   ]
 
   printUserLogin() {
-    
+    this.users.forEach(user => console.log(user.login))
   }
 
   createNewNameArray() {
-
+    return this.users.map(user => user.name);
   }
 
   sumAge() {
+    return this.users.reduce((acc, user) => acc + user.age, 0);
 
   }
 }

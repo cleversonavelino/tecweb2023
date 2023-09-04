@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { reduce } from 'rxjs';
+import { UsuarioModel } from './model/usuario.model';
+import { UsuarioService } from './service/usuario.service';
 
 @Component({
   selector: 'app-usuario',
@@ -8,6 +10,8 @@ import { reduce } from 'rxjs';
   styleUrls: ['./usuario.component.css']
 })
 export class UsuarioComponent {
+
+  constructor(private usuarioService: UsuarioService) {}
 
   login = new FormControl('', 
     [Validators.required, Validators.minLength(5)]);
@@ -19,6 +23,13 @@ export class UsuarioComponent {
     console.log(this.login.value);
     console.log(this.nome.value);
     console.log(this.email.value);
+
+    let usuario = new UsuarioModel();
+    usuario.email = this.email.value?.toString();
+    usuario.login = this.login.value?.toString();
+    usuario.nome = this.nome.valid?.toString();
+
+    this.usuarioService.salvar(usuario);
   }
 
   users = [

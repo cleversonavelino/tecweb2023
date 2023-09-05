@@ -13,13 +13,16 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     UsuarioComponent,
-    ProdutoComponent
+    ProdutoComponent,
+    ListaUsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatSidenavModule,
     MatRadioModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

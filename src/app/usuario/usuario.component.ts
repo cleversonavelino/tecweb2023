@@ -19,17 +19,15 @@ export class UsuarioComponent {
   email = new FormControl('', 
     [Validators.required, Validators.email]);
 
-  salvar() {
-    console.log(this.login.value);
-    console.log(this.nome.value);
-    console.log(this.email.value);
-
+  async salvar() {
     let usuario = new UsuarioModel();
     usuario.email = this.email.value?.toString();
     usuario.login = this.login.value?.toString();
-    usuario.nome = this.nome.valid?.toString();
+    usuario.nome = this.nome.value?.toString();
 
-    this.usuarioService.salvar(usuario);
+    this.usuarioService.salvar(usuario).subscribe(usuario => {
+      console.log(usuario);
+    });
   }
 
   users = [

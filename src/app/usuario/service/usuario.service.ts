@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { UsuarioModel } from '../model/usuario.model';
 
 @Injectable({
@@ -6,13 +8,15 @@ import { UsuarioModel } from '../model/usuario.model';
 })
 export class UsuarioService { 
 
-  usuarios: UsuarioModel[] = [];
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
-
-  salvar(usuario: UsuarioModel) {
-    this.usuarios.push(usuario);
-
-    console.log(this.usuarios);
+  salvar(usuario: UsuarioModel):Observable<UsuarioModel> {
+    return this.http.
+    post<UsuarioModel>('http://localhost:8080/usuario', usuario);
+  }
+    
+  listar():Observable<UsuarioModel[]> {
+    return this.http.
+    get<UsuarioModel[]>('http://localhost:8080/usuario');
   }
 }

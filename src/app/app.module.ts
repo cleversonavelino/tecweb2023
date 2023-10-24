@@ -16,6 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
 import {MatTableModule} from '@angular/material/table';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +27,7 @@ import {MatTableModule} from '@angular/material/table';
     ListaUsuarioComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

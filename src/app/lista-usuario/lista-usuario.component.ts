@@ -20,7 +20,7 @@ export class ListaUsuarioComponent implements OnInit {
 
   listar() {
     this.usuarioService.listar().subscribe({
-      next: (usuario) => this.dataSource = usuario,
+      next: (usuarios) => this.dataSource = usuarios,
       error: (e) => console.error(e),
       complete: () => console.info('complete') 
   });

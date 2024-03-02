@@ -17,6 +17,7 @@ import { ListaUsuarioComponent } from './lista-usuario/lista-usuario.component';
 import {MatTableModule} from '@angular/material/table';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ClienteComponent } from './cliente/cliente.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     LayoutComponent,
     UsuarioComponent,
     ProdutoComponent,
-    ListaUsuarioComponent
+    ListaUsuarioComponent,
+    ClienteComponent
   ],
   imports: [
     HttpClientModule,
